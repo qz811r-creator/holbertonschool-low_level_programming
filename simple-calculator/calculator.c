@@ -9,7 +9,8 @@ int main(void)
 {
 	int choice;
 
-	do {
+	while (1)
+	{
 		printf("Simple Calculator\n");
 		printf("1) Add\n");
 		printf("2) Subtract\n");
@@ -20,7 +21,7 @@ int main(void)
 
 		if (scanf("%d", &choice) != 1)
 		{
-			printf("Invalid input\n");
+			printf("Invalid choice\n");
 			break;
 		}
 
@@ -29,7 +30,11 @@ int main(void)
 			printf("Bye!\n");
 			break;
 		}
-	} while (choice != 0);
+		else if (choice < 0 || choice > 4)
+		{
+			printf("Invalid choice\n");
+		}
+	}
 
 	return (0);
 }
